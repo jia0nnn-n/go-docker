@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-docker-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jia-app
+    spec:
+      containers:
+        - name: go-docker-container
+          image: jia0/go-docker
+          ports:
+            - containerPort: 8080
+  selector:
+    matchLabels:
+      app: jia-app

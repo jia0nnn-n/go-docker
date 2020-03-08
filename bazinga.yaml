@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-docker-pod
+  labels:
+    app: webserver
+spec:
+  containers:
+  - name: go-docker-container
+    image: jia0/go-docker
+    ports:
+    - containerPort: 8080
